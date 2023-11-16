@@ -32,7 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: build storybook statics
-        run: npm run build-storybook -s docs
+        run: npm run build-storybook -- -o docs
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
