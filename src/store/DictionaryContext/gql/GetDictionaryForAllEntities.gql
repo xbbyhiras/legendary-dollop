@@ -1,0 +1,40 @@
+query GetDictionaryForAllEntities {
+  getDictionaryForAllEntities {
+    entityDefinition {
+      id
+      value {
+        acronym
+        short
+        medium
+        long
+        tooltip
+      }
+    }
+    attributeDefinitionList {
+      id
+      value {
+        acronym
+        short
+        medium
+        long
+        tooltip
+      }
+    }
+    actionDefinitionList {
+      id
+      value {
+        short
+        long
+        tooltip
+      }
+    }
+    decoratorDefinitionList {
+      id
+      value {
+        short
+        long
+        tooltip
+      }
+    }
+  }
+}
