@@ -1,9 +1,8 @@
 import * as React from "react";
 import type { Preview } from "@storybook/react";
 
-import { createGlobalStyle, css, ThemeProvider } from "styled-components";
-import { withThemeFromJSXProvider } from "@storybook/addon-themes";
-import { TDefaultTheme, defaultTheme } from "../src/theme";
+import { createGlobalStyle, css } from "styled-components";
+import { TDefaultTheme } from "../src/theme";
 import { CommonUiPureThemeProvider } from "../src/CommonUIProvider";
 
 const GlobalStyle = createGlobalStyle(
