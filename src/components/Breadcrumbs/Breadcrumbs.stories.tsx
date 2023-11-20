@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
+import { userEvent, within } from '@storybook/testing-library';
 import { Breadcrumbs } from './Breadcrumbs'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -27,6 +27,16 @@ export const FourItems: Story = {
     items,
     includeRoot: true,
   },
+  play: async ({ canvasElement }) => {
+    const breadcrumbs = within(canvasElement).getByRole('navigation');
+    const home = within(breadcrumbs).getByText('home');
+    const user = within(breadcrumbs).getByText('user');
+    const folder = within(breadcrumbs).getByText('folder');
+
+    userEvent.click(home);
+    userEvent.click(user);
+    userEvent.click(folder);
+  }
 };
 
 export const FourItems_NoRoot: Story = {
