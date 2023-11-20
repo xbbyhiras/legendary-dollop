@@ -10,7 +10,13 @@ export type TBreadcrumbsProps<TAdditional = {}> = {
    * The items to display in the breadcrumbs
    */
   items: TPathItem<TAdditional>[]
+  /**
+   * If true, the root item will be included in the breadcrumbs
+   */
   includeRoot?: boolean
+  /**
+   * Callback for when an item is clicked
+   */
   onClick?: (clickedItem: TPathItem<TAdditional>) => void
 }
 
