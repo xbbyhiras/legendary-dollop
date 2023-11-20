@@ -2,7 +2,7 @@ import { InfoCircleOutlined } from '../Icon/icons'
 import { AlertSpan } from './AlertSpan'
 
 type InlineAlertProps = {
-  message: string | undefined
+  message: string
   type?: 'warning' | 'error'
 }
 
