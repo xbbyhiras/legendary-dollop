@@ -1,5 +1,7 @@
 import * as React from 'react'
-import { DefaultTheme, StyledComponentProps } from 'styled-components'
+// @ts-ignore
+import type { StyledComponentProps } from 'styled-components'
+import { DefaultTheme } from 'styled-components'
 
 export type SCProps<Component extends string | React.ComponentType<any>, Props extends {}> = StyledComponentProps<
   Component,

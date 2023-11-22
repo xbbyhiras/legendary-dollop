@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InlineAlert } from './InlineAlert'
+import { ErrorAlert } from '../../lib/components/Alerts/ErrorAlert'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Byhiras/Alerts/InlineAlert',
-  component: InlineAlert,
+  title: 'Byhiras/Alerts/ErrorAlert',
+  component: ErrorAlert,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -20,34 +20,21 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof InlineAlert>;
+} satisfies Meta<typeof ErrorAlert>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const WithMessageDefault: Story = {
+export const WithMessage: Story = {
   args: {
-    message: 'Inline message',
-  }
-};
-export const WithMessageWarning: Story = {
-  args: {
-    message: 'Inline message',
-    type: 'warning',
-  }
-};
-
-export const WithMessageError: Story = {
-  args: {
-    message: 'Inline message',
-    type: 'error',
+    message: 'Error message',
   }
 };
 
 export const WithLongMessage: Story = {
   args: {
-    message: 'Inline message with a long text that should be wrapped, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    message: 'Error message with a long text that should be wrapped, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   }
 };
 

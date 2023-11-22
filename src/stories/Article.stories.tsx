@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Article } from "./Article";
-import licence from "./licence.md?raw";
-import { Markdown } from "../../utils/Markdown";
+import { Article } from "../../lib/components/Article/Article";
+import licence from "./assets/licence.md?raw";
+import { Markdown } from "../utils/Markdown";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
