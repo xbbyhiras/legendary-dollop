@@ -35,3 +35,9 @@ const config: StorybookConfig = {
   },
 };
 export default config;
+
+enum screenSizes {
+  mobile = 320,
+  tablet = 768,
+  desktop = 1024,
+}
