@@ -18,7 +18,6 @@ export declare const ArticleDiv: import("styled-components").IStyledComponent<"w
     id?: string | undefined;
     lang?: string | undefined;
     nonce?: string | undefined;
-    placeholder?: string | undefined;
     slot?: string | undefined;
     spellCheck?: (boolean | "true" | "false") | undefined;
     style?: import("react").CSSProperties | undefined;
@@ -290,7 +289,6 @@ export declare const ScrollableDiv: import("styled-components").IStyledComponent
     id?: string | undefined;
     lang?: string | undefined;
     nonce?: string | undefined;
-    placeholder?: string | undefined;
     slot?: string | undefined;
     spellCheck?: (boolean | "true" | "false") | undefined;
     style?: import("react").CSSProperties | undefined;

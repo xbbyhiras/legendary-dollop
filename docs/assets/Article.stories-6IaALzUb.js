@@ -1,4 +1,4 @@
-import{j as xe}from"./jsx-runtime-TQ0qLrG8.js";import{s as pr,n as Di}from"./styled-components.browser.esm-70aFL5iq.js";import{c as ut,g as Pi}from"./_commonjsHelpers-4gQjN7DL.js";import"./index-4g5l5LRQ.js";import"./Serializer-oVgSGsb3.js";const zi=pr.div(({theme:{fontSizes:e,space:t,colors:n}})=>Di`
+import{j as xe}from"./jsx-runtime-6h_sYW8U.js";import{s as pr,n as Di}from"./styled-components.browser.esm-70aFL5iq.js";import{c as ut,g as Pi}from"./_commonjsHelpers-4gQjN7DL.js";import"./index-4g5l5LRQ.js";import"./Serializer-oVgSGsb3.js";const zi=pr.div(({theme:{fontSizes:e,space:t,colors:n}})=>Di`
     font-size: ${e.text};
     max-width: 21cm;
     margin: 0 auto;

@@ -1,4 +1,4 @@
-import{H as c}from"./Header-ZMBx6ZkW.js";import"./jsx-runtime-TQ0qLrG8.js";import"./_commonjsHelpers-4gQjN7DL.js";import"./index-4g5l5LRQ.js";import"./Button_-bU7PeZ6V.js";const l={title:"Example/Header",component:c,tags:["autodocs"],parameters:{layout:"fullscreen"}},e={args:{user:{name:"Jane Doe"}}},r={};var a,o,s;e.parameters={...e.parameters,docs:{...(a=e.parameters)==null?void 0:a.docs,source:{originalSource:`{
+import{H as c}from"./Header-YjJWKeLk.js";import"./jsx-runtime-6h_sYW8U.js";import"./_commonjsHelpers-4gQjN7DL.js";import"./index-4g5l5LRQ.js";import"./Button_--KZWfvtZ.js";const l={title:"Example/Header",component:c,tags:["autodocs"],parameters:{layout:"fullscreen"}},e={args:{user:{name:"Jane Doe"}}},r={};var a,o,s;e.parameters={...e.parameters,docs:{...(a=e.parameters)==null?void 0:a.docs,source:{originalSource:`{
   args: {
     user: {
       name: 'Jane Doe'
