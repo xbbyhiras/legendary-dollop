@@ -70,7 +70,7 @@ jobs:
       - name: install
         run: time npm ci 
       - name: test-storybook
-        run: time npm run test-storybook -- --url https://fluffy-adventure-kqrgk6j.pages.github.io/
+        run: time npm run test-storybook -- --url https://fluffy-adventure-kqrgk6j.pages.github.io/ --no-index-json
 
       - name: Display error log
         if: ${{ failure() }}
