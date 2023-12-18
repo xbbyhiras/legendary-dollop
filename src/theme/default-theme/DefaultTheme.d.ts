@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
+ 
 import type { ThemeConfig } from 'antd'
 import { TLegacyTheme } from './legacy'
 
