@@ -1,3 +1,5 @@
+[![Deploy Storybook to Pages](https://github.com/Byhiras/common-ui/actions/workflows/static.yml/badge.svg)](https://github.com/Byhiras/common-ui/actions/workflows/static.yml)
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
