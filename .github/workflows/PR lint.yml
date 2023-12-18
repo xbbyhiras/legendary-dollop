@@ -31,30 +31,9 @@ jobs:
       - name: Display error log
         if: ${{ failure() }}
         run: cat /github/home/.npm/_logs/*.log
-  build:
-    timeout-minutes: 10
-    if: github.event.pull_request.draft == false
-    runs-on: ubuntu-latest
-    steps:
-      - name: check out
-        uses: actions/checkout@v3
-      - name: use node.js
-        uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
-        with:
-          node-version: '20.x'
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
-      - name: install
-        run: time npm ci 
-      - name: build storybook
-        run: time npm run build-storybook
-
-      - name: Display error log
-        if: ${{ failure() }}
-        run: cat /github/home/.npm/_logs/*.log
 
   test:
-    needs: [lint, build]
+    needs: [lint]
     timeout-minutes: 10
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
@@ -70,12 +49,14 @@ jobs:
       - name: install
         run: time npm ci 
       - name: install playwright
-        run: |
-          npx playwright install
-          npx playwright install-deps
+        run: time npx playwright install --with-deps
+      - name: build storybook
+        run: time npm run build-storybook --quiet
       - name: test-storybook
-        run: time npm run test-storybook -- --url https://fluffy-adventure-kqrgk6j.pages.github.io/ --no-index-json
-
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:6006 && npm run test-storybook"
       - name: Display error log
         if: ${{ failure() }}
         run: cat /github/home/.npm/_logs/*.log
