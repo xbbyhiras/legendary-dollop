@@ -1,7 +1,7 @@
-type TPathItem<TAdditional = {}> = {
+type TPathItem<TAdditional = Record<string, never>> = {
     value: string;
 } & TAdditional;
-export type TBreadcrumbsProps<TAdditional = {}> = {
+export type TBreadcrumbsProps<TAdditional = Record<string, never>> = {
     /**
      * The items to display in the breadcrumbs
      */
@@ -15,5 +15,5 @@ export type TBreadcrumbsProps<TAdditional = {}> = {
      */
     onClick?: (clickedItem: TPathItem<TAdditional>) => void;
 };
-export declare const Breadcrumbs: <TAdditional = {}>({ items, onClick, includeRoot, }: TBreadcrumbsProps<TAdditional>) => import("react/jsx-runtime").JSX.Element;
+export declare const Breadcrumbs: <TAdditional = Record<string, never>>({ items, onClick, includeRoot, }: TBreadcrumbsProps<TAdditional>) => import("react/jsx-runtime").JSX.Element;
 export {};
