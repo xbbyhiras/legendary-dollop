@@ -1,11 +1,8 @@
 name: test-run
 on: push
 jobs:
-  storybook-pages:
+  build-storybook:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: check out
         uses: actions/checkout@v3
@@ -22,12 +19,3 @@ jobs:
         run: npm run lint -- --fix
       - name: build storybook statics
         run: npm run build-storybook -- -o docs
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: './docs'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
