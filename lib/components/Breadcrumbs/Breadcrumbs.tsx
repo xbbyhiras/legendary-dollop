@@ -1,11 +1,11 @@
 import { Breadcrumb } from 'antd'
 import * as Styled from './Breadcrumbs.styled'
 
-type TPathItem<TAdditional = {}> = {
+type TPathItem<TAdditional = Record<string, never>> = {
   value: string
 } & TAdditional
 
-export type TBreadcrumbsProps<TAdditional = {}> = {
+export type TBreadcrumbsProps<TAdditional = Record<string, never>> = {
   /**
    * The items to display in the breadcrumbs
    */
@@ -20,7 +20,7 @@ export type TBreadcrumbsProps<TAdditional = {}> = {
   onClick?: (clickedItem: TPathItem<TAdditional>) => void
 }
 
-export const Breadcrumbs = <TAdditional = {},>({
+export const Breadcrumbs = <TAdditional = Record<string, never>,>({
   items,
   onClick,
   includeRoot = true,
