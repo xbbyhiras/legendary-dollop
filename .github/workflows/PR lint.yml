@@ -1,0 +1,34 @@
+name: PR lint
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+    branches:
+      - '**'
+
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    timeout-minutes: 10
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out
+        uses: actions/checkout@v3
+      - run: echo "test 1 success"
+      - name: use node.js
+        uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+      - name: install
+        run: npm ci 
+      - name: lint fix
+        run: npm run lint -- --fix
+
+      - name: Display error log
+        if: ${{ failure() }}
+        run: cat /github/home/.npm/_logs/*.log
