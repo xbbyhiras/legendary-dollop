@@ -17,7 +17,6 @@ jobs:
     steps:
       - name: check out
         uses: actions/checkout@v3
-      - run: echo "test 1 success"
       - name: use node.js
         uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
         with:
@@ -25,9 +24,52 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
       - name: install
-        run: npm ci 
+        run: time npm ci 
       - name: lint fix
-        run: npm run lint -- --fix
+        run: time npm run lint -- --fix
+
+      - name: Display error log
+        if: ${{ failure() }}
+        run: cat /github/home/.npm/_logs/*.log
+  test:
+    timeout-minutes: 10
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out
+        uses: actions/checkout@v3
+      - name: use node.js
+        uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+      - name: install
+        run: time npm ci 
+      - name: test-storybook
+        run: time npm run test-storybook
+
+      - name: Display error log
+        if: ${{ failure() }}
+        run: cat /github/home/.npm/_logs/*.log
+  build:
+    needs: lint
+    timeout-minutes: 10
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out
+        uses: actions/checkout@v3
+      - name: use node.js
+        uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+      - name: install
+        run: time npm ci 
+      - name: build storybook
+        run: time npm run build-storybook
 
       - name: Display error log
         if: ${{ failure() }}
