@@ -69,6 +69,10 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
       - name: install
         run: time npm ci 
+      - name: install playwright
+        run: |
+          npx playwright install
+          npx playwright install-deps
       - name: test-storybook
         run: time npm run test-storybook -- --url https://fluffy-adventure-kqrgk6j.pages.github.io/ --no-index-json
 
