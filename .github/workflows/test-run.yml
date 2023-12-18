@@ -1,0 +1,9 @@
+name: test-run
+on: push
+jobs:
+  test-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out
+        uses: actions/checkout@v3
+      - run: echo "test 1 success"
