@@ -1,0 +1,22 @@
+{
+  "name": "@xbbyhiras/legendary-dollop",
+  "version": "1.0.0",
+  "description": "test push, log something",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xbbyhiras/legendary-dollop.git"
+  },
+  "keywords": [
+    "registry"
+  ],
+  "author": "xbbyhiras",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/xbbyhiras/legendary-dollop/issues"
+  },
+  "homepage": "https://github.com/xbbyhiras/legendary-dollop#readme"
+}
