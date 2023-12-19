@@ -9,6 +9,9 @@
   "files": [
     "dist"
   ],
+	"publishConfig": {
+		"@byhiras:registry": "https://npm.pkg.github.com"
+	},
   "scripts": {
     "build-storybook": "storybook build -o docs",
     "build": "tsc && vite build",

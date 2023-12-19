@@ -1,0 +1,37 @@
+name: Publish library to the registry
+
+on:
+  release:
+    types:
+      - created
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  packages: write
+  contents: read
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "release"
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: './package-lock.json'
+          registry-url: https://npm.pkg.github.com
+      - name: install
+        run: npm ci
+      - name: publish
+        run: npm publish
+        env: 
+          NODE-AUTH-TOKEN: ${{secrets.GITHUB_TOKEN}}
+
