@@ -1,16 +1,16 @@
 {
-  "name": "@byhiras/common-ui",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@xbbyhiras/legendary-dollop",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
-  "description": "Common UI components for the Core project",
-  "main": "dist/common-ui.js",
+  "description": "legendary UI components for no project",
+  "main": "dist/legendary-dollop.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
 	"publishConfig": {
-		"@byhiras:registry": "https://npm.pkg.github.com"
+		"@xbbyhiras:registry": "https://npm.pkg.github.com"
 	},
   "scripts": {
     "build-storybook": "storybook build -o docs",
