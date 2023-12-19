@@ -34,7 +34,7 @@ jobs:
 
       - name: Display error log
         if: ${{ failure() }}
-        run: cat /github/home/.npm/_logs/*.log
+        run: cat /home/runner/.npm/_logs/*.log
 
   test:
     needs: [lint]
@@ -63,4 +63,4 @@ jobs:
             "npx wait-on tcp:6006 && npm run test-storybook"
       - name: Display error log
         if: ${{ failure() }}
-        run: cat /github/home/.npm/_logs/*.log
+        run: cat /home/runner/.npm/_logs/*.log

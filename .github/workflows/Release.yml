@@ -34,4 +34,6 @@ jobs:
         run: npm publish
         env: 
           NODE-AUTH-TOKEN: ${{secrets.GITHUB_TOKEN}}
-
+      - name: Display error log
+        if: ${{ failure() }}
+        run: cat /home/runner/.npm/_logs/*.log
