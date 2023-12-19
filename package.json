@@ -13,6 +13,9 @@
   "keywords": [
     "registry"
   ],
+  "publishConfig": {
+    "@xbbyhiras:registry": "https://npm.pkg.github.com"
+  },
   "author": "xbbyhiras",
   "license": "Apache-2.0",
   "bugs": {
