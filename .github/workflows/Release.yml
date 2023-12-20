@@ -5,7 +5,6 @@ on:
     types:
       - created
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   packages: write
   contents: read
@@ -32,8 +31,6 @@ jobs:
         run: npm ci
       - name: publish
         run: npm publish
-        env: 
-          NODE-AUTH-TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Display error log
         if: ${{ failure() }}
         run: cat /home/runner/.npm/_logs/*.log
