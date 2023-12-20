@@ -1,4 +1,4 @@
-[![Deploy Storybook to Pages](https://github.com/Byhiras/common-ui/actions/workflows/Pages.yml/badge.svg)](https://github.com/Byhiras/common-ui/actions/workflows/Pages.yml)
+[![Storybook deployed](https://github.com/xbbyhiras/legendary-dollop/actions/workflows/Pages.yml/badge.svg)](https://github.com/xbbyhiras/legendary-dollop/actions/workflows/Pages.yml)
 
 # React + TypeScript + Vite
 
