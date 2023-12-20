@@ -9,9 +9,9 @@
   "files": [
     "dist"
   ],
-	"publishConfig": {
-		"@xbbyhiras:registry": "https://npm.pkg.github.com"
-	},
+  "publishConfig": {
+    "@xbbyhiras:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build-storybook": "storybook build -o docs",
     "build": "tsc && vite build",
